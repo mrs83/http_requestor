@@ -1,9 +1,7 @@
 import sys
-import datetime
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.postgres.fields import JSONField
 from django.core.exceptions import ValidationError
 
 from celery import states
