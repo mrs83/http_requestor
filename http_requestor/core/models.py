@@ -45,6 +45,8 @@ class HttpRequest(models.Model):
     def task_status(self):
         if not self.task_id:
             return states.PENDING
+        if self.httpresponse:
+            return states.SUCCESS
         in_celery = sys.argv and sys.argv[0].endswith('celery') and 'worker' in sys.argv
         if in_celery:
             with allow_join_result():

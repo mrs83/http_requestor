@@ -8,7 +8,7 @@ from http_requestor.core.models import HttpRequest, HttpResponse
 
 @admin.register(HttpRequest)
 class HttpRequestAdmin(admin.ModelAdmin):
-    list_display = ["url", "method", "task_id", "task_status", "httpresponse_status"]
+    list_display = ["url", "method", "schedule_at", "task_id", "task_status", "httpresponse_status"]
 
     def httpresponse_status(self, obj):
         if obj.httpresponse:
